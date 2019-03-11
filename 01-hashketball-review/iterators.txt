@@ -1,0 +1,61 @@
+What is this method for?
+What does this method return?
+What should the block return?
+  * `#each`
+  * `#map`
+  * `#select`
+  * `#find`
+
+# Each
+- Iterates over the array
+- Does not make any changes
+- Returns the original array
+- Doesn't really matter what the block returns
+
+# Map
+- Returns a transformed array
+- Block returns one transformed element
+
+numbers = [1, 2, 2, 5, 6, 7, 8, 9]
+
+new_array = numbers.map do |num|
+  p "🤯"
+  num + 1
+end
+
+numbers_array == new_array
+
+# Select
+- Block needs to return true or false (or truthy or falsy)
+- Returns an array of elements for which the block returns true
+- Good for returning certain elements of the array
+
+numbers = [1, 2, 2, 5, 6, 7, 8, 9]
+
+new_array = numbers.select do |num|
+  # if num > 6
+  #   true
+  # else
+  #   false
+  # end
+  num > 6
+end
+
+p new_array
+
+# Find
+- Block needs to return true or false (or truthy or falsy)
+- Returns the first element for which the block returns true
+- Good for returning the first matching element of the array
+
+numbers = [1, 2, 2, 5, 6, 7, 8, 9]
+
+just_seven = numbers.find do |num|
+  num > 6
+end
+
+
+
+
+
+
