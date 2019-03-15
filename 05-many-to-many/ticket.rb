@@ -2,7 +2,7 @@ class Ticket
 
   ALL = []
 
-  attr_reader :passenger
+  attr_reader :passenger, :flight
 
   def initialize(passenger, flight)
     @passenger = passenger

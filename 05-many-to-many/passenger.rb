@@ -2,6 +2,8 @@ class Passenger
 
   ALL = []
 
+  attr_reader :name
+
   def initialize(name)
     @name = name
     ALL << self
@@ -9,14 +11,14 @@ class Passenger
   end
 
   def tickets
-    filtered_tickets = Ticket.all.select do |ticket|
+    Ticket.all.select do |ticket|
       ticket.passenger == self
     end
-    filtered_tickets
   end
 
   def flights
-    tickets.map do ||
+    tickets.map do |ticket|
+      ticket.flight
     end
   end
 
