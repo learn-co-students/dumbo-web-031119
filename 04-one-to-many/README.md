@@ -33,4 +33,8 @@
 2. It's easy to call a class method from an instance method because all instances belong to that class
 
 
+For every (x), how many (y)?
+For every (y), how many (x)?
+
+
 
