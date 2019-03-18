@@ -18,14 +18,15 @@
 1. Write the SQL to return all of the rows in the artists table?
 
 ```SQL
-
+  select * from artists 
 
 ```
 
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
 ```SQL
-
+select * from artists
+where name = 'Black Sabbath'
 
 ```
 
@@ -33,6 +34,10 @@
 
 ```sql
 
+CREATE TABLE fans (
+  id integer primary KEY,
+  name text
+);
 
 ```
 
@@ -40,17 +45,29 @@
 
 ```sql
 
+
+ALTER TABLE fans
+ADD artist_id integer;
+
 ```
 
 5. Write the SQL to add yourself as a fan of the Black Eyed Peas? ArtistId **169**
 
 ```sql
 
+INSERT INTO fans (name, artist_id)
+VALUES ('Bill', 169)
+
 ```
 
 6. Check out the [Faker gem](https://github.com/stympy/faker). `gem install faker`, open up irb, run `require 'faker'` and then generate a fake name for yourself using `Faker::Name.name`. How would you update your name in the fans table to be your new name?
 
    ```sql
+
+UPDATE fans 
+SET name = 'Coletta Runolfsson IV'
+WHERE id = 3
+
 
    ```
 
