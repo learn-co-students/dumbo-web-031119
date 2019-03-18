@@ -73,29 +73,52 @@ WHERE id = 3
 
 -----------------
 
-7. Write the SQL to return fans that are not fans of the black eyed peas.
+1. Write the SQL to return fans that are not fans of the black eyed peas.
 
 ```sql
+
+  SELECT name FROM fans where artist_id not in (select id from artists where name like 'Black %')
 
 ```
 
-8. Write the SQL to display an artists name next to their album title
+2. Write the SQL to display an artists name next to their album title
 
 ```sql
+
+  select artists.name, albums.title 
+  from artists 
+  inner join albums 
+  on albums.artist_id = artists.id
+
+  select artists.name, albums.title 
+  from artists, albums 
+  where albums.artist_id = artists.id
 
 ```
 
-9. Write the SQL to display artist name, album name and number of tracks on that album
+3. Write the SQL to display artist name, album name and number of tracks on that album
 
 ```sql
 
-
+  SELECT artists.name, albums.title, count(tracks.name) as track_count
+  FROM artists 
+  INNER JOIN albums 
+  ON albums.artist_id = artists.id
+  inner join tracks on tracks.album_id = albums.id
+  GROUP BY album_id
 
 ```
 
-10. Write the SQL to return the name of all of the artists in the 'Pop' Genre
+4. Write the SQL to return the name of all of the artists in the 'Pop' Genre
 
 ```sql
+
+  SELECT DISTINCT artists.name
+  FROM artists 
+  INNER JOIN albums 
+  ON albums.artist_id = artists.id
+  inner join tracks on tracks.album_id = albums.id
+  where tracks.genre_id = 9
 
 ```
 
