@@ -5,3 +5,8 @@ desc "Start our app console"
 task :console do
   Pry.start
 end
+
+desc "Squirt out some emojis"
+task :emojis do
+  puts "🤯" * 10
+end

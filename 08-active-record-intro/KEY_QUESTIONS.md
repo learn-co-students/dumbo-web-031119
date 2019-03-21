@@ -13,7 +13,8 @@
   * Thing.find_by
   * Thing#update
   * Thing#delete
-* Are there more ActiveRecord methods than this? How can I find out?
+* Are there more ActiveRecord methods than this? How can I find out? https://guides.rubyonrails.org/active_record_basics.html
+
 * What is a gem? 💎 Why are they helpful to use?
   * What is Bundler? How can it make my life easier?
   * What is Rake? How can it make my life easier?

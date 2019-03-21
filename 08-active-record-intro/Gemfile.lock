@@ -14,6 +14,7 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     coderay (1.1.2)
+    colorize (0.8.1)
     concurrent-ruby (1.1.4)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
@@ -47,6 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  colorize (~> 0.8.1)
   pry
   rake
   require_all

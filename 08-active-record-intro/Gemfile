@@ -6,3 +6,6 @@ gem 'rake'
 gem 'require_all'
 gem 'sqlite3', '~> 1.3.6'
 gem 'pry'
+
+# Added at 2019-03-21 10:12:52 -0400 by graham.troyer-joy:
+gem "colorize", "~> 0.8.1"
