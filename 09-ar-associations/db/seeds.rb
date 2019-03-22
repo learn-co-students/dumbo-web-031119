@@ -6,6 +6,7 @@ Zoo.destroy_all
 
 dumbo = Animal.create(name: "Dumbo")
 clifford = Animal.create(name: "Clifford")
+
 Animal.create(name: "Willie")
 Animal.create(name: "Harambe")
 
@@ -17,6 +18,6 @@ Zoo.create(name: "San Diego Zoo")
 
 
 Escape.create(animal_id: clifford.id,  zoo_id: Zoo.find_by(name: "Brookfield Zoo").id)
-Escape.create(animal: dumbo, zoo: bronx)
-Escape.create(animal: dumbo, zoo: prosp)
+# Escape.create(animal: dumbo, zoo: bronx)
+# Escape.create(animal: dumbo, zoo: prosp)
 

@@ -5,4 +5,5 @@
 * How can I implement a has_many relationship in ActiveRecord?
   * What SQL will ActiveRecord use when I access this relationship?
 * How can I implement a has_many through: relationship in ActiveRecord?
-  * What SQL will ActiveRecord use   when I access this relationship?
+  * What SQL will ActiveRecord use when I access this relationship?
+
