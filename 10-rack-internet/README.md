@@ -16,10 +16,10 @@
   - What is DNS?
 
 - Parts of an HTTP request:
+  - What is an HTTP status code and how can I understand one?
   - What are the parts of a URL and what do they do? https://www.mattcutts.com/blog/seo-glossary-url-definitions/
   - What is an HTTP method and why would I want to use one?
     - What does it mean that HTTP is stateless?
-  - What is an HTTP status code and how can I understand one?
   - What is the difference between a static and a dynamic website?
     - How can I use Rack to build a very simple dynamic website?
 
