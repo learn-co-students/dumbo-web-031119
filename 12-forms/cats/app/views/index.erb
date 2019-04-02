@@ -1,0 +1,18 @@
+<h1>HI I AM AN INDEX OF CATS</h1>
+
+<form>
+  <label for="search-term">Search Term</label>
+  <input id="search-term" type="text" name="query" />
+  <input type="submit" value="Search!" />
+</form>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li>
+      <a href="/cats/<%= cat.name %>">
+        <%= cat.name  %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
