@@ -1,0 +1,14 @@
+
+
+
+<h1>FORM FOR EDITING <%= @cat.name.upcase %></h1>
+
+<form action="/cats/<%= @cat.id %>" method="POST">
+
+  <input type="hidden" name="_method" value="PATCH" />
+
+  <%= erb :form %>
+
+  <input type="submit" value="Edit <%= @cat.name %>" />
+
+</form>

@@ -1,5 +1,10 @@
 <h1>Show Kitty</h1>
+<a href="/cats/<%= @cat.id %>/edit">Edit cat</a>
 
+<form action="/cats/<%= @cat.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="Send <%= @cat.name %> to live on a farm">
+</form>
 <%= @cat.name %>
 Fluffiness: <%= @cat.fluffiness %>
 Tail Length: <%= @cat.tail_length %>

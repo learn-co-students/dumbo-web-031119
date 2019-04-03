@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :method_override, true
   end
 
   get "/" do
@@ -28,11 +29,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/cats/new" do
+    @cat = Cat.new
     erb :new
   end
 
   post '/cats' do
-    @cat = Cat.new(params)
+    @cat = Cat.new(params[:cat])
     @cat.save
     redirect to "/cats/#{ @cat.id }"
   end
@@ -46,6 +48,43 @@ class ApplicationController < Sinatra::Base
     erb :kitty_info
     # end
   end
+
+  get "/cats/:id/edit" do
+    @cat = Cat.find(params[:id])
+    erb :edit
+  end
+
+
+  # params = {
+  #   "_method"=>"PATCH"
+  #   "name"=>"Potato", 
+  #   "tail_length"=>"99", 
+  #   "fluffiness"=>"99", 
+  #   "id"=>"6"
+  # }
+  # params = {
+  #   "_method"=>"PATCH",
+  #   "cat"=> {
+  #     "name"=>"Potato", 
+  #     "tail_length"=>"99", 
+  #     "fluffiness"=>"99", 
+  #   },
+  #   "id"=>"6"
+  # }
+
+  patch "/cats/:id" do
+    @cat = Cat.find(params[:id])
+    # params.delete("_method")
+    @cat.update(params[:cat])
+    redirect to "/cats/#{ @cat.id }"
+  end
+
+  delete '/cats/:id' do
+    @cat = Cat.find(params[:id])
+    @cat.destroy
+    redirect to "/cats"
+  end
+
 
   # get '/cats/3' do
   #   @cat = Cat.find_by(id: 3)
