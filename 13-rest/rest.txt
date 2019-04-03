@@ -1,0 +1,19 @@
+
+
+
+WHAT      VERB          PATH            AR METHOD
+
+Read all   
+Read one  
+
+New form  
+Create    
+
+Edit      
+Update    
+
+Delete    
+
+
+
+

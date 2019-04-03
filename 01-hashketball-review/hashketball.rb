@@ -132,6 +132,14 @@ def get_player_by_name(player_name)
     # true or false
     player[:player_name] == player_name
   end
+
+  player_to_return = nil
+  all_players_array.each do |player|
+    if player[:player_name] == player_name
+      player_to_return = player
+    end
+  end
+  player_to_return
 end
 
 

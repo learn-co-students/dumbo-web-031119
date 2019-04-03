@@ -11,13 +11,13 @@ class Flight
   end
 
   def passengers
-    tickets.map do |ticket|
+    self.tickets.map do |ticket|
       ticket.passenger
     end
   end
 
   def passenger_manifest
-    passengers.map do |passenger|
+    self.passengers.map do |passenger|
       passenger.name
     end
   end
