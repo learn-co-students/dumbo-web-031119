@@ -1,0 +1,18 @@
+<input type="text" name="artist[name]" value="<%= @artist.name %>" placeholder="Name of Artist"/>
+<br/>
+<input type="number" name="artist[age]" value="<%= @artist.age %>" placeholder="Age of Artist"/>
+<br/>
+<input type="text" name="artist[bio]" value="<%= @artist.bio %>" placeholder="Bio of Artist"/>
+<br/>
+
+<% @instruments.each do |instrument| %>
+  <p>
+    <%= instrument.name %>
+    <input
+      <%= "checked" if @artist.instruments.include?(instrument) %>
+      type="checkbox"
+      name="instruments[]"
+      value="<%= instrument.id %>"
+    >
+  </p>
+<% end %>
