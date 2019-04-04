@@ -1,0 +1,25 @@
+<h1>New Leg!</h1>
+
+<form action="/legs" method="POST">
+
+  <ul>
+    <li>
+      <label for="cat-id">Cat:</label>
+      <!-- <input id="cat-id" type="text" name="leg[cat_id]" value="<%= @leg.cat_id %>" >x -->
+      
+      <select name="leg[cat_id]">
+        <% @cats.each do |cat| %>
+          <option value="<%= cat.id %>">
+            <%= cat.name %>
+          </option>
+        <% end %>
+      </select>
+
+
+    </li>
+    
+  </ul>
+
+  <input type="submit" />
+  
+</form>
