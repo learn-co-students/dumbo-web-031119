@@ -1,0 +1,5 @@
+Hello!
+<% @instruments.each do |inst| %>
+  <%= link_to inst.name, inst %>
+  <%# link_to inst.name, instrument_path(inst)  %>
+<% end %>
