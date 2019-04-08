@@ -1,0 +1,12 @@
+
+<h1>Submit the mod 2 code challenge</h1>
+<form action="/submissions" method="POST">
+  <input type="hidden" name="submission[student_id]" value="<%= @submission.student_id %>" />
+  <ul>
+    <li>
+      <label for="link">Link to your pull request:</label>
+      <input id="link" type="text" name="submission[link]" />
+    </li>
+  </ul>
+  <input type="submit" />
+</form>

@@ -1,0 +1,16 @@
+<h1><%= @dog.name %></h1>
+
+<ol>
+  <li>
+Tail Length: <%= pluralize(@dog.tail_length, "foot", "feet") %>
+</li>
+<li>
+Color: <span class="swatch" style="background-color: <%= @dog.color_hexadecimal %>;"></span>
+</li>
+</ol>
+
+<%= link_to "Edit #{ @dog.name }", edit_dog_path(@dog) %>
+<%= form_for @dog, method: :delete do |form| %>
+  <%= form.submit "Send #{ @dog.name } to live on a farm" %>
+<% end %>
+

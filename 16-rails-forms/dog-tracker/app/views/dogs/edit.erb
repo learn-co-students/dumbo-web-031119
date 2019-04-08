@@ -1,0 +1,21 @@
+
+<%= form_for @dog do |form| %>
+
+  <ul>
+    <li>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </li>
+    <li>
+      <%= form.label :tail_length %>
+      <%= form.number_field :"tail_length" %>
+    </li>
+    <li>
+      <%= form.label :color_hexadecimal %>
+      <%= form.text_field :color_hexadecimal %>
+    </li>
+  </ul>
+
+  <%= form.submit %>
+<% end %>
+
