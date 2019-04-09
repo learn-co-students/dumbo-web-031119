@@ -2,7 +2,7 @@ class CreateCats < ActiveRecord::Migration[5.2]
   def change
     create_table :cats do |t|
       t.string :name
-      t.integer :tail_length
+      t.float :tail_length
       t.string :color_hexadecimal
 
       t.timestamps

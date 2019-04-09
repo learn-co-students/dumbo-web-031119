@@ -11,13 +11,22 @@ class CatsController < ApplicationController
   end
 
   def create
+    # @cat = Cat.new(cat_params)
+    # if @cat.save
     @cat = Cat.create(cat_params)
-    redirect_to @cat
+    if @cat.valid?
+      redirect_to @cat
+    else
+      render :new
+    end
   end
 
   def update
-    @cat.update(cat_params)
-    redirect_to @cat
+    if @cat.update(cat_params)
+      redirect_to @cat
+    else
+      render :edit
+    end
   end
 
   def destroy

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_132348) do
 
   create_table "cats", force: :cascade do |t|
     t.string "name"
-    t.integer "tail_length"
+    t.float "tail_length"
     t.string "color_hexadecimal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

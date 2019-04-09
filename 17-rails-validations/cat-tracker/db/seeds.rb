@@ -9,7 +9,7 @@
 
 Cat.create!(name: "Pusheen", tail_length: 10, color_hexadecimal: "#ddd")
 Cat.create!(name: "Bukas", tail_length: 10, color_hexadecimal: "#A0522D")
-Cat.create!(name: "Massapequa")
+Cat.create!(name: "Massapequa", tail_length: 10.999)
 Cat.create!(name: "Danko", tail_length: 9)
 Cat.create!(name: "Asland")
 Cat.create!(name: "Tootsie", color_hexadecimal: "#8B4513")

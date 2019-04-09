@@ -20,3 +20,11 @@
   border: 1px dotted gray;
   display: inline-block;
 }
+
+.field_with_errors input {
+    border-color: red;
+}
+.error-list {
+  color: red;
+  list-style-type: square;
+}
