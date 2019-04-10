@@ -1,0 +1,17 @@
+<h1><%= @cat.name %></h1>
+
+<ol>
+  <li>
+    Tail Length: <%= pluralize(@cat.tail_length, "foot", "feet") %>
+  </li>
+  <li>
+    Color: 
+    <span class="swatch" style="background-color: <%= @cat.color_hexadecimal %>;" />
+  </li>
+</ol>
+
+<%= link_to "Edit #{ @cat.name }", edit_cat_path(@cat) %>
+<%= form_for @cat, method: :delete do |form| %>
+  <%= form.submit "Send #{ @cat.name } to live on a farm" %>
+<% end %>
+
