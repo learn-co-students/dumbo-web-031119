@@ -11,6 +11,11 @@
 
   <body>
     <header>
+      <% if @notification %>
+        <p class="message">
+          <%= @notification %>
+        </p>
+      <% end %>
       <% if @errors && @errors.any? %>
       <ul class="errors">
         <% @errors.each do |error| %>
@@ -20,7 +25,7 @@
         <% end %>
       </ul>
       <% end %>
-      <h2>Votes remaining: <%= 5 %></h2>
+      <h2>Votes remaining: <%= @votes_remaining %></h2>
     </header>
     <%= yield %>
   </body>
