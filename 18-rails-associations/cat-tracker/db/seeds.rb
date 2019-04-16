@@ -13,3 +13,10 @@ Cat.create!(name: "Massapequa", tail_length: 10.999)
 Cat.create!(name: "Danko", tail_length: 9)
 Cat.create!(name: "Asland")
 Cat.create!(name: "Tootsie", color_hexadecimal: "#8B4513")
+
+
+Mouse.create!(name: "Jerry")
+Mouse.create!(name: "Mickey")
+Mouse.create!(name: "Mighty")
+Mouse.create!(name: "Stuart Litte")
+Mouse.create!(name: "Ratatouille")

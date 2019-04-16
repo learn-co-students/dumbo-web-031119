@@ -7,7 +7,6 @@ class Cat < ApplicationRecord
     allow_nil: true
   }
 
-  
-
-
+  has_many :hunts, foreign_key: :hunter_cat_id
+  has_many :hunted_mice, -> { distinct }, through: :hunts, source: :hunted_mouse
 end

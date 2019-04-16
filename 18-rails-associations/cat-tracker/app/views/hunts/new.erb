@@ -1,0 +1,16 @@
+<%= form_for @hunt do |f| %>
+<ul>
+  <li>
+    <%= f.label :hunter_cat_id %>
+    <%# f.text_field :hunter_cat_id %>
+    <%= f.collection_select :hunter_cat_id, @cats, :id, :name %>
+
+  </li>
+  <li>
+    <%= f.label :hunted_mouse_id %>
+    <%# f.text_field :hunted_mouse_id %>
+    <%= f.collection_select :hunted_mouse_id, @mice, :id, :name %>
+  </li>
+</ul>
+<%= f.submit %>
+<% end %>

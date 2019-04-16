@@ -1,0 +1,2 @@
+class Dinosaru < ApplicationRecord
+end

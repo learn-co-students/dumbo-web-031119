@@ -1,0 +1,4 @@
+class Mouse < ApplicationRecord
+
+
+end

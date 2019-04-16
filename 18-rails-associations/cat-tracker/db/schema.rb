@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_09_132348) do
+ActiveRecord::Schema.define(version: 2019_04_10_152910) do
 
   create_table "cats", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(version: 2019_04_09_132348) do
     t.string "color_hexadecimal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hunts", force: :cascade do |t|
+    t.integer "hunter_cat_id"
+    t.integer "hunted_mouse_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mice", force: :cascade do |t|
+    t.string "name"
+    t.float "tail_length"
   end
 
 end

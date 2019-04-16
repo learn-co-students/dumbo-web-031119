@@ -10,6 +10,15 @@
   </li>
 </ol>
 
+<h2>Hnted mice</h2>
+<ul>
+<% @cat.hunted_mice.each do |mouse| %>
+  <li>
+  <%= mouse.name %>
+  </li>
+<% end %>
+</ul>
+
 <%= link_to "Edit #{ @cat.name }", edit_cat_path(@cat) %>
 <%= form_for @cat, method: :delete do |form| %>
   <%= form.submit "Send #{ @cat.name } to live on a farm" %>
