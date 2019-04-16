@@ -4,7 +4,7 @@
     #<%= color.hex %>
     <span class="votes">Votes: <%= color.votes.length %>
       <%= form_for [color, Vote.new], local: true do |f| %>
-      <button type="submit" class="<%= @can_vote ? "vote" : "nope" %>">
+      <button type="submit" class="<%= @logged_in_user && @logged_in_user.can_vote? ? "vote" : "nope" %>">
         <span class="vote">🗳</span>
         <span class="nope">🙅‍♀️</span>
       </button>

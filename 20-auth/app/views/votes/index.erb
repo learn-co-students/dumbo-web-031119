@@ -2,8 +2,11 @@
   <% @votes.each do |vote| %>
   <li class="vote">
     <%= vote.color.hex %>
-    <%= form_for vote, method: :delete do |f| %>
-      <%= f.submit "delete" %>
+    <%= vote.user.username %>
+    <% if vote.user_id == @user_id %>
+      <%= form_for vote, method: :delete do |f| %>
+        <%= f.submit "delete" %>
+      <% end %>
     <% end %>
   </li>
   <% end %>

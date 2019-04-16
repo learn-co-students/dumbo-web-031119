@@ -11,6 +11,14 @@
 
   <body>
     <header>
+      <% if @logged_in %>
+        Logged in as <%= @logged_in_user.username %>
+        <%= button_to "logout", logout_path, method: :delete %>
+        <%# link_to "logout", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_path %>
+        <%= link_to "Log in", new_login_path %>
+      <% end %>
       <% if @notification %>
         <p class="message">
           <%= @notification %>
@@ -25,7 +33,9 @@
         <% end %>
       </ul>
       <% end %>
-      <h2>Votes remaining: <%= @votes_remaining %></h2>
+      <% if @logged_in_user %>
+      <h2>Votes remaining: <%= @logged_in_user.remaining_votes %></h2>
+      <% end %>
     </header>
     <%= yield %>
   </body>
