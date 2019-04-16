@@ -8,7 +8,7 @@
 *  What is hashing and how does it make password storage more secure?
 *  What are rainbow tables and how can they defeat a password hashing strategy?
 *  What is salting? What is a salt? How can it defeat a rainbow tables attack?
- 
+
 ## Let's implement
 * Sign up
 * Log in
@@ -28,3 +28,6 @@
 * Log out
   * Route
   * View
+
+
+# BCrypt::Password.new(@password.salt + BCrypt::Password.new(BCrypt::Engine.hash_secret("cowabunga", @password.salt)).checksum) == "cowabunga"

@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2019-04-15 10:57:07 -0400 by graham.troyer-joy:
 gem "rb-readline", "~> 0.5.5"
+
+# Added at 2019-04-16 10:25:07 -0400 by graham.troyer-joy:
+gem "bcrypt", "~> 3.1"
