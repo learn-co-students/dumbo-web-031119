@@ -182,3 +182,14 @@ form ul {
   margin: 0; 
   padding: 0; 
 }
+
+.vote form {
+  display: inline;
+  padding: 0;
+
+  input[type=submit] {
+    margin: 0;
+    padding: 10px;
+    font-size: 10px;
+  }
+}

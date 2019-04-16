@@ -1,0 +1,10 @@
+<ul>
+  <% @votes.each do |vote| %>
+  <li class="vote">
+    <%= vote.color.hex %>
+    <%= form_for vote, method: :delete do |f| %>
+      <%= f.submit "delete" %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
