@@ -125,3 +125,40 @@ const compliments = [
   "You’re really something special.",
   "You’re a gift to those around you."
 ];
+
+console.log("It worked?!?!?!")
+let emTag = document.querySelector('em')
+emTag.remove()
+
+ // my list of nice compliments added
+ let ulTag = document.querySelector('ul')
+
+ // we need to iterate through the compliments array and pull out each compliment
+for(let i = 0; i < compliments.length; i++) {
+
+  // create an li using our compliment
+
+
+    // i want this:
+  // compliments[i] => "Your eyebrows are on fleek." ->
+
+    // to become this:
+
+
+  ulTag.innerHTML += `<li>
+    <img width="200" src="https://placekitten.com/510/215" />
+    <h3>"${compliments[i]}"</h3>
+    <div>
+      <cite>Hugged 0 times</cite>
+      <button>🤗 it</button>
+    </div>
+  </li>`
+
+
+  // add the list items containing the compliments to the ul we have
+
+
+}
+
+
+ //

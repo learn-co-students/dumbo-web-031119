@@ -27,6 +27,6 @@
 
 ## Deliverables
 As a user I want...
-* nicer styling on my app
-* the weird `<em>` tag removed
+* ~~nicer styling on my app~~
+* ~~the weird `<em>` tag removed~~
 * my list of nice compliments added
