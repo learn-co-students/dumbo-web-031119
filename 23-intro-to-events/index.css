@@ -1,0 +1,56 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+
+li {
+  border: 1px solid black;
+  margin: 15px;
+  padding: 15px;
+  position: relative;
+  max-width: 600px;
+  min-height: 100px;
+}
+
+img {
+  width: 100%;
+}
+
+div {
+  min-height: 50px;
+}
+
+button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 15px;
+  padding: 10px 25px;
+  font-size: 15px;
+}
+
+input[type="text"] {
+  width: 350px;
+  font-size: 13px;
+}
+
+input[type="submit"] {
+  width: 120px;
+  background: lightgray;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.officer-eric {
+  width: 50px;
+  height: 50px;
+  z-index: 99999999;
+  position: absolute;
+}
