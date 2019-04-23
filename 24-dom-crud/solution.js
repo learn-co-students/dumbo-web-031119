@@ -165,7 +165,7 @@ ulTag.addEventListener('click',  function(event) {
     event.target.parentElement.remove();
   } else if (event.target.classList.contains('favorite')) {
     event.target.parentElement.innerHTML =
-    `<img src="https://emoji.slack-edge.com/T02MD9XTF/officer-eric/6e11d5decd7c13f5.gif" class="officer-eric" />` +
+    `<img src="https://emoji.slack-edge.com/T02MD9XTF/officer_eric/d36a13bdfd9f2828.jpg" class="officer-eric" />` +
     event.target.parentElement.innerHTML
   }
 })

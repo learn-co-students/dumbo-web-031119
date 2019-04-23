@@ -141,6 +141,7 @@ const ulTag = document.querySelector('ul');
 compliments.forEach(function(compliment) {
   ulTag.innerHTML += `<li>
     <div class="trash">🗑</div>
+    <div class="favorite">⭐️</div>
     <img width="200" src="https://placekitten.com/${randomNumber(400, 500)}/${randomNumber(200, 250)}" />
     <h3>"${compliment}"</h3>
     <div>
@@ -176,6 +177,11 @@ ulTag.addEventListener('click', function(event) {
   } else if (event.target.classList.contains('trash')) {
     // delete this compliment!!!!
     event.target.parentElement.remove()
+  } else if (event.target.classList.contains('favorite')) {
+    // delete this compliment!!!!
+    event.target.parentElement.innerHTML =
+    `<img src="https://emoji.slack-edge.com/T02MD9XTF/officer_eric/d36a13bdfd9f2828.jpg" class="officer-eric" />` +
+    event.target.parentElement.innerHTML
   }
 })
 
@@ -189,6 +195,7 @@ formTag.addEventListener('submit', function(event) {
 
   ulTag.innerHTML = `<li>
     <div class="trash">🗑</div>
+    <div class="favorite">⭐️</div>
     <img width="200" src="https://placekitten.com/${randomNumber(400, 500)}/${randomNumber(200, 250)}" />
     <h3>"${complimentText}"</h3>
     <div>
