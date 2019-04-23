@@ -32,8 +32,8 @@ As a user I now have...
 # Deliverables
 As a user I want...
 *FAKE*
-* to find my first button and alert "HELLO!" when I click it
-* anything I click on should have an `officer-eric` added to it
+* ~~to find my first button and alert "HELLO!" when I click it~~
+* ~~anything I click on should have an `officer-eric` added to it~~
 * to hover over any li and have it's background color change to `pink`
 
 *REAL*

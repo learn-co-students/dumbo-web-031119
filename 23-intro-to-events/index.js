@@ -142,3 +142,35 @@ for (let i = 0; i < compliments.length; i++) {
       </div>
     </li>`
 }
+
+
+// to find my first button and alert "HELLO!" when I click it
+document.querySelector('button').addEventListener('click', function(){
+  alert('HELLO!')
+})
+
+// anything I click on should have an `officer-eric` added to it
+
+// listen anywhere on the document for any click
+document.addEventListener('click', function(event) {
+  console.log('it worked!!')
+  // create an image tag with OE
+  const imgTag = document.createElement('img');
+    imgTag.src = 'https://emoji.slack-edge.com/T02MD9XTF/officer_eric/d36a13bdfd9f2828.jpg';
+    imgTag.classList.add('officer-eric');
+
+  console.log(imgTag)
+  event.target.prepend(imgTag)
+  // put (append) OE into the element (whatever whatever we actually clicked on)
+})
+
+
+
+// to hover over any li and have it's background color change to `pink`
+// select every li element
+document.querySelector('ul').addEventListener('mouseover', function(event) {
+  if (event.target.tagName === 'LI') {
+    event.target.style.backgroundColor = 'pink'
+  }
+})
+// when your cursor is over an li, change that li's background to pink
