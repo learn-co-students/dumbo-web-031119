@@ -39,6 +39,7 @@ As a user I want...
 To use this backend run these commands:
 * `cd complimentor-api`
 * `bundle`
+* `rails db:create`
 * `rails db:migrate`
 * `rails db:seed`
 * `rails s`
