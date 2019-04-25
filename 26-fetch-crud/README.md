@@ -19,14 +19,15 @@ As a user I now have...
 * the ability to delete a compliment (I want a trashcan)
 * the ability to favorite the best compliments (clicking favorite adds an `officer-eric` next to the favorite button)
 * random nicolas cage gifs instead of cute cats
-* the ability to save all of my data about my compliments
-* the ability to use my saved data to create all of my compliments from
 
 *REVEIW*
-* update my hug count and have it save to my database
+* the ability to save all of my data about my compliments
+* the ability to use my saved data to create all of my compliments
+* random zoo portraits instead of nicolas cage gifs `https://www.zooportraits.com/art/`
 
 # Deliverables
 As a user I want to...
+* update my hug count and have it save to my database
 * create new compliments and have them save to my database
 * delete a compliment and have it save to my database
 * favorite a compliment and have it save to the database
