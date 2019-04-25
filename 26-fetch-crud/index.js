@@ -87,13 +87,13 @@ const createComplimentLiHTML = (compliment, hugCount, id) => {
     return `<li>
       <div class="trash">🗑</div>
       <div class="favorite">⭐️</div>
-      <img src="${randomZooPortrait()}" />
+      <img width="200" src="${randomZooPortrait()}" />
       <h3>"${compliment}"</h3>
       <div>
         <cite data-id="${id}" data-hug-count="${hugCount}">Hugged ${hugCount} times</cite>
         <button>🤗 it</button>
       </div>
-    </li>`
+    </li>`  
 }
 
 
