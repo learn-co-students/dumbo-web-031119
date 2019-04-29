@@ -84,7 +84,7 @@ const randomZooPortrait = () => {
 }
 
 const createComplimentLiHTML = (compliment, hugCount, id) => {
-    return `<li>
+    return `<li data-id="${id}">
       <div class="trash">🗑</div>
       <div class="favorite">⭐️</div>
       <img width="200" src="${randomZooPortrait()}" />
@@ -93,7 +93,7 @@ const createComplimentLiHTML = (compliment, hugCount, id) => {
         <cite data-id="${id}" data-hug-count="${hugCount}">Hugged ${hugCount} times</cite>
         <button>🤗 it</button>
       </div>
-    </li>`  
+    </li>`
 }
 
 
@@ -136,8 +136,13 @@ ulTag.addEventListener('click', (event) => {
 
 
   } else if (event.target.classList.contains('trash')) {
-    // delete this compliment!!!!
+
+    // removing this from the server
+    deleteComplimentOnServer(event.target.parentElement.dataset.id)
+
+    // removing this from the DOM
     event.target.parentElement.remove()
+
   } else if (event.target.classList.contains('favorite')) {
     event.target.parentElement.innerHTML =
     `<img src="https://emoji.slack-edge.com/T02MD9XTF/officer_eric/d36a13bdfd9f2828.jpg" class="officer-eric" />` +
@@ -150,11 +155,14 @@ const formTag = document.querySelector('form');
 
 formTag.addEventListener('submit', (event) => {
   event.preventDefault()
-
   const complimentText = event.target.compliment.value
 
-  ulTag.innerHTML = createComplimentLiHTML(complimentText) +  ulTag.innerHTML
-
+  // updates the server
+  createNewComplimentOnServer(complimentText).then(compliment => {
+    // updates the dom
+    ulTag.innerHTML = createComplimentLiHTML(compliment.message, compliment.hug_count, compliment.id) +  ulTag.innerHTML
+    event.target.compliment.value = ""
+  })
 })
 
 
@@ -170,5 +178,25 @@ const updatedHugCountOnServer = (id, hugCount) => {
   }).then(response => {
     return response.json()
   })
+}
 
+const createNewComplimentOnServer = (message) => {
+  return fetch('http://localhost:3000/compliments', {
+  	method: 'POST',
+  	headers: {
+  		'Content-Type':'application/json',
+  		'Accept':'application/json'
+  	},
+  	body: JSON.stringify({
+  		hug_count: 0,
+  		favorited: false,
+  		message: message
+  	})
+  }).then(res => {
+    return res.json()
+  })
+}
+
+const deleteComplimentOnServer = (id) => {
+  fetch(`http://localhost:3000/compliments/${id}`, { method: 'DELETE' })
 }

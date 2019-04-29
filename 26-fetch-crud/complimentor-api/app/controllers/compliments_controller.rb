@@ -46,6 +46,6 @@ class ComplimentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def compliment_params
-      params.permit(:title, :favorited, :hug_count)
+      params.permit(:title, :favorited, :hug_count, :message)
     end
 end
