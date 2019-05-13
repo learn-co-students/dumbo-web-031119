@@ -3,22 +3,68 @@ Intro to React // JSX & Props
 
 ## SWBATs
 
-- [ ] Visualize/Identify Components on any website
-- [ ] Explain what a Component is conceptually in the UI
-- [ ] Explain what a React Component actually is in code
-- [ ] Use JSX to build custom components and render them in the browser
-- [ ] Briefly explain Babel's purpose in React
-- [ ] Understand how `create-react-app` works and what it offers a developer
+- [x] Visualize/Identify Components on any website
+- [x] Explain what a Component is conceptually in the UI
+- [x] Briefly explain Babel's purpose in React
+- [x] Explain what a React Component actually is in code
+- [x] Use JSX to build custom components and render them in the browser
+
+- [x] Understand how `create-react-app` works and what it offers a developer
+- [x] Use props to make components more dynamic and reusable
+- [x] See how props are to components as arguments are to functions
+- [x] Begin to build modular & reusable components
+
 - [ ] Organize code into files and use the import-export syntax to pass code between files
 - [ ] Setup a new React app and play around with building UIs
-- [ ] Use props to make components more dynamic and reusable
-- [ ] See how props are to components as arguments are to functions
-- [ ] Begin to build modular & reusable components
-
 - [ ] **BONUS** Use the `children` prop 
 
 
 ## Declarative vs Imperative Programming
+
+Chipotle
+- Grab the bowl/wrap
+- Slam some rice into
+- Lay down some protein
+- Smack down some cheese
+- Maybe add guac
+- Wrap it
+
+What they ened to know from customer
+- Choose tortilla
+- Choose rice
+- Choose protein
+- CHoose salsa
+- Choose cheese
+
+
+How do we add stuff to the page in vanilla JS?
+- Use querySelector to find DOM element that will be the parent (find a place to put your new element)
+- Create an element
+- Add some attributes to that element (id, className, etc.)
+- Append new element to parent
+
+```js
+  function createCard(header, text){
+    const cardContainer = document.querySelector("#card-container")
+
+    cardContainer.innerHTML += `
+      <div class="card">
+        <h1>${header}</h1>
+        <p>${text}</p>
+      </div>
+    `
+  }
+
+  createCard("Hello world", "asuydvaisomdiajshdtfacvduijsaodn")
+  createCard("Hello world", "asuydvaisomdiajshdtfacvduijsaodn")
+  createCard("Hello world", "asuydvaisomdiajshdtfacvduijsaodn")
+  createCard("Hello world", "asuydvaisomdiajshdtfacvduijsaodn")
+  createCard("Hello world", "asuydvaisomdiajshdtfacvduijsaodn")
+  createCard("Hello world", "asuydvaisomdiajshdtfacvduijsaodn")
+```
+
+
+AirBnB for fantasy places
 
 
 

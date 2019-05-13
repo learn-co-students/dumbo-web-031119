@@ -9,11 +9,46 @@
   </head>
   <body>
     <div id="root"></div>
+
     <script type="text/babel">
+    
+      // function that returns dynamic JSX
+      function createHeader(phrase, person, big){
+        if (big){
+         return <h1 className="header">{`Hello ${phrase}! -${person}`}</h1>
+        } else {
+          return <h4 className="header">{`Hello ${phrase}! -${person}`}</h4>
+        }
+      }
+
+      // functional component that returns dynamic JSX
+      function Header(props){
+        if (props.big){
+         return <h1 className="header">{`Hello ${props.phrase}! -${props.person}`}</h1>
+        } else {
+          return <h4 className="header">{`Hello ${props.phrase}! -${props.person}`}</h4>
+        }
+      }
+
+      // class component with a render function that returns dynamic JSX
+      class ClassyHeader extends React.Component {
+        render(){
+          if (this.props.big){
+           return <h1 className="header">{`Hello ${this.props.phrase}! -${this.props.person}`}</h1>
+          } else {
+            return <h4 className="header">{`Hello ${this.props.phrase}! -${this.props.person}`}</h4>
+          }
+        }
+      }
+
+      // render takes 2 arguments: the 1st is what you want to appear on the screen, 2nd is where you want it to appear
       ReactDOM.render(
-        <h1>Hello world!</h1>, 
-        document.getElementById('root')
-      )
+        <div>
+          {createHeader("world", "Eric", true)}
+          <Header phrase="Brooklyn" person="Steven" big={false} />
+          <ClassyHeader phrase="fools" person="Mar" big={true} />
+        </div>
+        , document.getElementById('root'))
     </script>
   </body>
 </html>
