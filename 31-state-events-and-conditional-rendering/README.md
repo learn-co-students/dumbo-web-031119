@@ -2,24 +2,36 @@ State, Events, and Conditional Rendering
 ==============
 
 ## SWBATs
-- [ ] Add event handlers to elements in React
+- [x] Organize code into files and use the import-export syntax to pass code between files
+- [x] Setup a new React app and play around with building UIs
+
+- [x] Add event handlers to elements in React
 - [ ] Explain why we have Synthetic Events
 - [ ] Correctly choose when to use `props` vs `state`, and explain why one would use one or the other
 - [ ] Instantiate `state` inside and outside of the `constructor`
 - [ ] Create event handler callbacks that manipulate `state`
 - [ ] Trigger rerenders by calling `setState`
 - [ ] Manipulate the DOM by changing values in `state` instead of using vanilla JS
-- [ ] Draw a component hierarchy and describe the Flow of Information
 
 ## Lecture Notes
 
-How would we change that index number in vanilla JS?
+What is state?
+It's an object
 
-- Might have some integer in the global scope that's managing the index
-- Grab the "Ninjify" button using `querySelector`
-- Add a click event listener to the "Ninjify" button
-- When that button is clicked, the index is incremented and then the profile-card is rerendered
+What is it for?
+Used for values that expected to changed
+Things that are meant to be dynamic
+State represents the current state of the DOM
+  - If a card is flipped or not
+  - If a button has been toggled
+  - How many things to display / how many items in a shopping cart
+  - Whether a filter/sort is being applied
+  - What page you're on
+  - Current time in a video
+  - If a user is logged in or not
 
+Where is it located?
+Each component has it's own state
 
 ### Events
 Synthentic events ensure that you can use the `event` object in the same way regardless of browser or machine. This comes back to the `learn once, write anywhere` principle.
@@ -40,7 +52,6 @@ This is a key component of declarative programming in React: we tie our componen
 ### Props
 
 You can pass anything in `props`, even functions! We will often find ourselves passing functions down to children components - this is because while we might need state in one part of our application, our event listener might be attached to an entirely different component. To get around this, we define our state-changing functions in a component and then pass these functions downwards to be called by children components.
-
 
 
 ## Extras
