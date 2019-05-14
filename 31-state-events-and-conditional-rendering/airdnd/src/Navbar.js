@@ -1,17 +1,28 @@
 import React from 'react'
 
 function Navbar(props){
+
+  function changeToCities(){
+
+  }
   return (
     <div className="navbar">
       <button 
         className="nav-buttons" 
-        onClick={(event) => {props.changePage("home")}}>
+        onClick={() => {props.changePage("home")}}>
         AirDnD
       </button>
       <button 
         className="nav-buttons" 
-        onClick={(event) => {props.changePage("cities")}}>
+        onClick={() => {props.changePage("cities")}}>
         Cities
+      </button>
+      <button 
+        className="nav-buttons" 
+        onClick={()=> { 
+          props.changePage("form")
+        }}>
+        Add City
       </button>
     </div>
   )

@@ -6,6 +6,7 @@ function NewCity(props){
       <input placeholder="Name" />
       <input placeholder="Series" />
       <input placeholder="Image" />
+      <input type="submit"/>
     </form>
   )
 }
