@@ -3,10 +3,10 @@ Controlled Forms and Lifting State
 
 ## SWBATs
 
-- [ ] Write fully controlled forms
-- [ ] Manipulate the DOM by changing values in `state` instead of using vanilla JS
-- [ ] Pass data up and down the component hierarchy with our callbacks
-- [ ] Draw a component hierarchy and describe the Flow of Information
+- [x] Write fully controlled forms
+- [x] Manipulate the DOM by changing values in `state` instead of using vanilla JS
+- [x] Pass data up and down the component hierarchy with our callbacks
+- [x] Draw a component hierarchy and describe the Flow of Information
 
 ## Lecture Notes
 
@@ -22,6 +22,11 @@ form.addEventListener("submit", (event) => {
   // take data, do what you needd
 })
 ```
+
+React
+- Coordinate our state with the form using an `onChange`
+- Coordinate the form with our state using the `value` attribute on our inputs
+- Use `onSubmit` to finally send our state data to wherever it needs to go
 
 ### Lifting State
 
