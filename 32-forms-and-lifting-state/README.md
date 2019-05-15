@@ -11,7 +11,17 @@ Controlled Forms and Lifting State
 ## Lecture Notes
 
 ### Forms
+Vanilla JS
+- Event Listener (submit) on the form
+- Write a callback for the event listener
 
+```js
+form.addEventListener("submit", (event) => {
+  // find information from the form
+  // involves finding the inputs for that form and ask it for its value
+  // take data, do what you needd
+})
+```
 
 ### Lifting State
 

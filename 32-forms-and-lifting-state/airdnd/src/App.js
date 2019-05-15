@@ -8,7 +8,8 @@ import NewCity from './NewCity'
 
 class App extends React.Component {
   state = {
-    page: "home",
+    page: "form",
+    cities: cities,
   }
 
   changePage = (newPage) => {
@@ -17,18 +18,34 @@ class App extends React.Component {
     }
   }
 
+  updateCities = (cityObj) => {
+    // NO NO - because it depends on old state
+    // this.setState({
+    //   cities: [cityObj, ...this.state.cities],
+    //   page: "cities"
+    // })
+
+    this.setState(prevState => {
+      return {
+        cities: [cityObj, ...prevState.cities],
+        page: "cities"
+      }
+    })
+  }
+
   renderPage(){
     switch(this.state.page){
       case "home":
         return <Home/>
       case "cities":
-        return <Cities cities={cities}/>
+        return <Cities cities={this.state.cities}/>
       case "form":
-        return <NewCity />
+        return <NewCity updateCities={this.updateCities} />
     }
   }
 
   render(){
+    console.log(this.state.counter)
     return (
       <div>
         <Navbar changePage={this.changePage}/>
