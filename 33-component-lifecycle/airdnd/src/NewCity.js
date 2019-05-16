@@ -39,6 +39,10 @@ class NewCity extends React.Component {
       </div>
     )
   }
+
+  componentWillUnmount(){
+    // window.location =("https://www.farmersonly.com/")
+  }
 }
 
 export default NewCity

@@ -1,15 +1,26 @@
 import React from 'react';
 import './App.css';
-import cities from './data'
+// import cities from './data'
 import Home from './Home'
 import Navbar from './Navbar'
 import Cities from './Cities'
 import NewCity from './NewCity'
 
+// http://localhost:3001/api/v1/cities
+
 class App extends React.Component {
   state = {
-    page: "form",
-    cities: cities,
+    page: "cities",
+    cities: [],
+    loading: true
+  }
+
+  componentDidMount(){
+    fetch("http://localhost:3001/api/v1/cities")
+    .then(res => res.json())
+    .then(response => {
+      this.setState({loading: false, cities: response})
+    })
   }
 
   changePage = (newPage) => {
@@ -45,11 +56,11 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state.counter)
+    console.log(this.state.cities)
     return (
       <div>
         <Navbar changePage={this.changePage}/>
-        {this.renderPage()}
+        {this.state.loading ? <h1>LOADING</h1> : this.renderPage()}
       </div>
     );
   }

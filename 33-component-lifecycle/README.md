@@ -3,12 +3,24 @@ Component Lifecycle Methods
 
 ## SWBATs
 
-- [ ] Write methods that interact with data at different points throughout a component's life
-- [ ] Identify the most-used Lifecycle Methods
+- [x] Write methods that interact with data at different points throughout a component's life
+- [x] Identify the most-used Lifecycle Methods
+- [x] Explain why we `fetch` data using `componentDidMount`
 - [ ] Identify problems caused by asynchronicity in React
-- [ ] Explain why we `fetch` data using `componentDidMount`
 
 ## Lecture Notes
+
+The 3 Parts of a Component's Lifecycle
+
+Mounting (Birth)
+  - To be created and added to the DOM
+Updating (Life)
+  - Be careful about `setState` in updating lifecycle methods because you could run into an infinite loop
+  - Happens when the component receives new props, setState is called, or forceUpdate is called
+Unmounting (Death)
+  - Good for clearing up any background processes
+  - Firing off functions that need to be called when the component is no longer on the page
+  
 
 
 ## Summary
