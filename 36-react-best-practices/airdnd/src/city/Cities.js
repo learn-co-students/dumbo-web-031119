@@ -1,6 +1,6 @@
 import React from 'react'
-import CityCard from '../components/CityCard'
-import CityContainer from '../components/CityContainer'
+import CityCard from './CityCard'
+import CityContainer from './CityContainer'
 
 class Cities extends React.Component {
   state = {

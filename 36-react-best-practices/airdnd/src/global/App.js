@@ -1,13 +1,15 @@
-import React from 'react';
-import './assets/App.css';
-// import cities from './data'
-import Home from './Home'
-import Navbar from './Navbar'
-import Cities from './containers/Cities'
-import NewCity from './NewCity'
-import Loader from './Loader'
+import React, { Component } from 'react';
+import '../assets/App.css';
 
-class App extends React.Component {
+import Home from '../static/Home'
+import Loader from '../static/Loader'
+
+import Navbar from './Navbar'
+
+import Cities from '../city/Cities'
+import NewCity from '../city/NewCity'
+
+class App extends Component {
   state = {
     page: "cities",
     cities: [],
@@ -29,7 +31,7 @@ class App extends React.Component {
   }
 
   updateCities = (cityObj) => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return {
         cities: [cityObj, ...prevState.cities],
         page: "cities"

@@ -3,32 +3,44 @@ React Best Practices
 
 ## SWBAT
 
-- [ ] Begin using the React Dev Tools
-- [ ] Write cleaner React code
+- [x] Begin using the React Dev Tools
+- [x] Write cleaner React code
 
 ## Objectives
 
 **Opinions**
-- [ ] Code Organization
-- [ ] Presentational vs Container components
+- [x] Code Organization/file structure 
+  - Containers vs Components
+  - Organized by domain
+  - Organized by page
+- [x] Presentational vs Container components
+  - Presentational
+    - functional components
+    - no state
+    - sole purpose is to render
+  - Container
+    - class component
+    - has state
+    - responsible for container logic and behavior
 
 **The More You Know**
 
-- [ ] Functional vs Class Components
-  - [ ] Implicit return for Functional components
-  - [ ] What is PureComponent?
-- [ ] Fragments
-- [ ] defaultProps and propTypes
-- [ ] Callbacks (avoid useless wrapping)
+- [x] Functional vs Class Components
+  - [x] Implicit return for Functional components
+  - [x] What is PureComponent?
+- [x] Fragments
+- [x] defaultProps and propTypes
+
+- [x] Callbacks (avoid useless wrapping)
 
 - Syntax tricks often seen in React:
-  - [ ] Arrow functions returning objects
-  - [ ] Destructuring
-  - [ ] Spread (w/ prepend and append)
-  - [ ] Objects with the same key/value name
-  - [ ] constructor vs. ES7 instance variables
-  - [ ] map (as a way to update objects in an array of objects)
-  - [ ] { [variable]: "as_key" }
+  - [x] Arrow functions returning objects
+  - [x] Destructuring
+  - [x] Spread (w/ prepend and append)
+  - [x] Objects with the same key/value name
+  - [x] constructor vs. ES7 instance variables
+  - [x] map (as a way to update objects in an array of objects)
+  - [x] { [variable]: "as_key" }
 
 ## Resources
 

@@ -32,6 +32,8 @@ class NewCity extends React.Component {
   }
 
   render(){
+
+    const { name, series, image_url } = this.state
      return (
       <div>
         <div className="splash">
@@ -40,9 +42,9 @@ class NewCity extends React.Component {
         <div className="centered panel">
           <h1 className="form-header">Add a city</h1>
           <form onSubmit={this.handleSubmit} className="form">
-            <input onChange={this.handleChange} value={this.state.name} name="name" placeholder="Name" /><br/>
-            <input onChange={this.handleChange} value={this.state.series}name="series" placeholder="Series" /><br/>
-            <input onChange={this.handleChange} value={this.state.image_url} name="image_url" placeholder="Image" /><br/>
+            <input onChange={this.handleChange} value={name} name="name" placeholder="Name" /><br/>
+            <input onChange={this.handleChange} value={series}name="series" placeholder="Series" /><br/>
+            <input onChange={this.handleChange} value={image_url} name="image_url" placeholder="Image" /><br/>
             <input id="city-create-button" type="submit"/>
           </form>
         </div>
