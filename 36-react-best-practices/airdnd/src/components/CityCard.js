@@ -1,7 +1,6 @@
 import React from 'react'
 
 function CityCard(props){
-
   function handleClick(){
     props.changeCity(props.id)
   }

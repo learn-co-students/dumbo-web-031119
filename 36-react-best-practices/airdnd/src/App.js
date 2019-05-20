@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css';
+import './assets/App.css';
 // import cities from './data'
 import Home from './Home'
 import Navbar from './Navbar'
-import Cities from './Cities'
+import Cities from './containers/Cities'
 import NewCity from './NewCity'
 import Loader from './Loader'
 
@@ -51,7 +51,6 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state.cities)
     return (
       <div className="app">
         <Navbar changePage={this.changePage}/>

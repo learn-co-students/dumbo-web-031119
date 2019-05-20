@@ -9,6 +9,17 @@
   text-shadow: -1px 1px black;
 }
 
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin: 0.5vw;
+}
+
+.city-card-text {
+  color: black;
+  font-size: 12px;
+}
+
 .loader {
   animation: loader-spin infinite 3s linear;
   height: 40vmin;

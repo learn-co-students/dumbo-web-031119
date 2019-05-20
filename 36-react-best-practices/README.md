@@ -9,13 +9,8 @@ React Best Practices
 ## Objectives
 
 **Opinions**
-
 - [ ] Code Organization
-  - folders, imports, methods
 - [ ] Presentational vs Container components
-  - Explore the distinction and why everything is opinion
-  - Container component
-  - Presentational component
 
 **The More You Know**
 
@@ -25,7 +20,8 @@ React Best Practices
 - [ ] Fragments
 - [ ] defaultProps and propTypes
 - [ ] Callbacks (avoid useless wrapping)
-- Syntax often seen in React:
+
+- Syntax tricks often seen in React:
   - [ ] Arrow functions returning objects
   - [ ] Destructuring
   - [ ] Spread (w/ prepend and append)

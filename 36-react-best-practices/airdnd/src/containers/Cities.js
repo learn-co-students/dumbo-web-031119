@@ -1,23 +1,19 @@
 import React from 'react'
-import CityCard from './CityCard'
-import CityContainer from './CityContainer'
+import CityCard from '../components/CityCard'
+import CityContainer from '../components/CityContainer'
 
 class Cities extends React.Component {
   state = {
-    // clicked: true,
     currentCity: null
   }
 
   changeCity = (cityID) => {
-    // console.log(cityID)
-
     this.setState({
       currentCity: cityID
     })
   }
 
   goBack = () => {
-    console.log("GOING")
     this.setState({
       currentCity: null
     })
@@ -27,20 +23,18 @@ class Cities extends React.Component {
     return this.props.cities.map(city => <CityCard changeCity={this.changeCity} key={city.id} {...city} />)
   }
 
-
-
   render(){
+    let selectedCity = this.props.cities.find(city => city.id === this.state.currentCity)
 
-    let foundCity = this.props.cities.find(city => city.id === this.state.currentCity)
-
-    return (
-      <div className="cities">
-        { foundCity ? 
-          <CityContainer goBack={this.goBack} {...foundCity}/> 
-          : 
-          this.renderCityCards() }
-      </div>
-    )
+    if (selectedCity){
+      return <CityContainer goBack={this.goBack} {...selectedCity}/> 
+    } else {
+      return (
+        <div className="cities">
+          {this.renderCityCards()}
+        </div>
+      )
+    }      
   }
 }
 

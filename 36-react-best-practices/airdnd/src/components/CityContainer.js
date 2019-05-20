@@ -1,5 +1,5 @@
 import React from 'react'
-import HomesContainer from './HomesContainer'
+import HomesContainer from '../HomesContainer'
 
 const CityContainer = (props) => {
   return (
