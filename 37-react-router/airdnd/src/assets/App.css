@@ -1,0 +1,141 @@
+.splash {
+  height: 92vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.home {
+  color: rgb(207,216,212);
+  text-shadow: -1px 1px black;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin: 0.5vw;
+}
+
+.city-card-text {
+  color: black;
+  font-size: 12px;
+}
+
+.loader {
+  animation: loader-spin infinite 3s linear;
+  height: 40vmin;
+  pointer-events: none;
+  position: absolute;
+  left: 40%;
+}
+
+
+@keyframes loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  height: 8vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-buttons {
+  flex-grow: 1;
+}
+
+.cities {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 0.5vw;
+}
+
+.city-card {
+  margin: 0.5vw;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: black;
+  padding: 0.5vw;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.image-wrapper {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.centered {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.high {
+  top: 25%;
+}
+
+.form {
+  width: 25vw;
+  height: 25vh;
+  padding: 2vh;
+}
+
+.form > * {
+  width: 90%;
+  margin: 1vh;
+  height: 4vh;
+  font-size: 20px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+#city-create-button {
+  background-color: green;
+  color: white;
+  border-color: black;
+}
+
+.form-header{
+  color: white;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+.panel {
+  background-color: rgba(0,0,0, 0.5);
+  padding: 2vw;
+  border-style: solid;
+  border-radius: 1px;
+  text-align: center;
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
