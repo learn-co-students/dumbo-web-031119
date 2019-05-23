@@ -17,6 +17,7 @@ class NewCity extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
+
     fetch("http://localhost:3001/api/v1/cities", {
       method: "POST",
       headers: {
@@ -28,6 +29,7 @@ class NewCity extends React.Component {
     .then(res => res.json())
     .then(response => {
       this.props.updateCities(response)
+      this.props.history.push("/cities")
     })
   }
 

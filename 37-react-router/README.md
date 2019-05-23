@@ -3,14 +3,30 @@ React Router
 
 ## SWBAT
 
-- [ ] Create a multi-page SPA
-- [ ] Explain the advantages of using React Router
-- [ ] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Link`, `NavLink`, `Route`, `Switch`
-- [ ] Use `push`, `Redirect`, and `history` to navigate pages
-- [ ] Create dynamic routes and use `params`
+- [x] Create a multi-page SPA
+- [x] Explain the advantages of using React Router
+- [x] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Link`, `NavLink`, `Route`, `Switch`
+- [x] Use `push`, `Redirect`, and `history` to navigate pages
+- [x] Create dynamic routes and use `params`
 - [ ] Make the distinction between `state` being one _Single Source of Truth_ and `react-router` being another _Single Source of Truth_
 
 ## Lecture Notes
+
+What're some of the limitations of an SPA (single-page application)?
+
+Limited organization - want clear separation of views
+No proper site hierarchy - "/cities", "/cities/5", "/cities/5/homes"
+Must always follow the same user flow
+Can't share links!
+Can't do analytics - SEO (search engine optimization!
+Harder to design - user stories are more complicated 
+
+Everything must be loaded at once - can't solve for this
+
+### Notes
+
+`yarn add react-router-dom --save`
+`npm install react-router-dom --save`
 
 ### Static vs Dynamic Routing
 

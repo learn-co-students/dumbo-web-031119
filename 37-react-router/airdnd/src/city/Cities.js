@@ -24,6 +24,7 @@ class Cities extends React.Component {
   }
 
   render(){
+    console.log("CITIES PROPS", this.props)
     let selectedCity = this.props.cities.find(city => city.id === this.state.currentCity)
 
     if (selectedCity){
