@@ -16,21 +16,47 @@ class ShopPage extends React.Component {
 	}
 
 	selectBot = (botID) => {
+		// Get ID from localStorage
+		const token = localStorage.getItem('token')
+		// Add to request in headers or body
 		fetch(`http://localhost:3001/api/v1/bots/${botID}/purchase`, {
-			method: "POST"
+			method: "POST",
+			headers: {
+				"Authorization": token
+			}
 		})
 		.then(res => res.json())
 		.then(response => {
-			this.setState(prevState => {
-				let newBots = prevState.bots.filter(bot => bot.id !== response.id)
-				return {
-					bots: newBots
+
+			const user = response.user
+			const editedBot = response.bot
+
+			const editedBots = this.state.bots.map(bot => {
+				if (bot.id === editedBot.id){
+					return editedBot
+				} else {
+					return bot
 				}
 			})
+
+			this.setState({
+				bots: editedBots
+			})
+
+			this.props.updateUser(user)
+
+			// this.setState(prevState => {
+			// 	let newBots = prevState.bots.filter(bot => bot.id !== response.id)
+			// 	return {
+			// 		bots: newBots
+			// 	}
+			// })
 		})
 	}
 	render(){
+
 		const { bots } = this.state
+		console.log(bots)
 		return (
 				<Fragment>
 					<SaleList bots={bots} selectBot={this.selectBot}/>

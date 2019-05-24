@@ -12,14 +12,27 @@ class Navbar extends React.Component {
 						<Link className="item" to="/shop">
 							Shop
 						</Link>
-						<Menu.Menu position="right">
-							<Link className="item" to="/login">
-								Login
-							</Link>
-							<Link className="item" to="/signup">
-								Sign Up
-							</Link>
-						</Menu.Menu>
+						{
+							this.props.currentUser
+							?
+							<Menu.Menu position="right">
+								<Link className="item" to={`/users/${this.props.currentUser.id}`}>
+									Profile
+								</Link>
+								<Menu.Item onClick={this.props.logOut}>
+									Logout
+								</Menu.Item>
+							</Menu.Menu>
+							:
+							<Menu.Menu position="right">
+								<Link className="item" to="/login">
+									Login
+								</Link>
+								<Link className="item" to="/signup">
+									Sign Up
+								</Link>
+							</Menu.Menu>
+						}
 					</Menu>
 				</Grid.Column>
 			</Grid.Row>

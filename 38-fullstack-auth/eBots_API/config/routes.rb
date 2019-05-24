@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 			post "/bots/:id/purchase", to: "bots#purchase"
 			post "/users/:id/add_balance", to: "users#add_balance"
 			post "/users/:id/get_bot", to: "users#get_bot"
+			post "/login", to: "auth#login"
+
+			get "/auto_login", to: "auth#auto_login"
 		end
 	end
 end

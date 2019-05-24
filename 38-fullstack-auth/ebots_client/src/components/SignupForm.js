@@ -16,22 +16,28 @@ class SignupForm extends React.Component {
 	}
 
 	createUser = () => {
-		fetch("http://localhost:3001/api/v1/users", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Accepts": "application/json",
-			},
-			body: JSON.stringify(this.state)
-		})
-		.then(res => res.json())
-		.then((response) => {
-			if (response.errors){
-				alert(response.errors)
-			} else {
-				this.props.history.push(`/users/${response.id}`)
-			}
-		})
+		if (this.state.password === this.state.passwordConfirmation){
+			fetch("http://localhost:3001/api/v1/users", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"Accepts": "application/json",
+				},
+				body: JSON.stringify(this.state)
+			})
+			.then(res => res.json())
+			.then((response) => {
+				if (response.errors){
+					alert(response.errors)
+				} else {
+					this.props.setCurrentUser(response)
+					this.props.history.push(`/users/${response.id}`)
+				}
+			})
+		} else {
+			alert("Check your typing skills!")
+		}
+		
 	}
 
 	handleSubmit = () => {

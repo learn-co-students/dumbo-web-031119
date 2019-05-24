@@ -14,10 +14,23 @@ class Api::V1::BotsController < ApplicationController
 	end
 
 	def purchase
+		user = session_user
+
+
 		bot = Bot.find(params[:id])
 
-		bot.update(for_sale: false)
+		user.update(
+			balance: user.balance - bot.price
+		)
+
+		bot.update(
+			owner_id: user.id,
+			for_sale: false
+		)
 		
-		render json: bot
+		render json: {
+			user: UserSerializer.new(user), 
+			bot: BotSerializer.new(bot)
+		}
 	end
 end

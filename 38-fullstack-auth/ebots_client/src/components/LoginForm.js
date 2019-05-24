@@ -14,7 +14,27 @@ class LoginForm extends React.Component {
 	}
 
 	handleSubmit = () => {
-		console.log("LOGGING IN", this.state)
+		fetch("http://localhost:3001/api/v1/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Accepts": "application/json"
+			},
+			body: JSON.stringify(this.state)
+		})
+		.then(res => res.json())
+		.then(data => {
+			if (data.errors){
+				// handle errors
+				alert(data.errors)
+			} else {
+				// what do we do here?
+				this.props.setCurrentUser(data)
+				this.props.history.push(`/users/${data.id}`)
+
+			}
+
+		})
 	}
 
 	render(){

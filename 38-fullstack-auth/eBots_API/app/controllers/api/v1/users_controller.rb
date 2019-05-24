@@ -16,7 +16,9 @@ class Api::V1::UsersController < ApplicationController
 		)
 
 		if user.save
-			render json: user
+			token = encode_token(user)
+
+			render json: {user: UserSerializer.new(user), token: token}
 		else
 			render json: {errors: user.errors.full_messages}
 		end
