@@ -1,24 +1,22 @@
 import React from 'react'
-import { Link, Navlink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import withBarking from '../HOC/withBarking'
 
 function Navbar(props){
   return (
     <div className="navbar">
-      <Link to="/">
-        <button 
-          className="nav-buttons" >
+      <Link to="/" className="nav-buttons" >
+        <button className="button">
           AirDnD
         </button>
       </Link>
-      <Link to="/cities">
-        <button 
-          className="nav-buttons" >
+      <Link to="/cities" className="nav-buttons">
+        <button className="button">
           Cities
         </button>
       </Link>
-      <Link to="/new-city">
-        <button 
-          className="nav-buttons" >
+      <Link to="/new-city" className="nav-buttons" >
+        <button className="button">
           Add City
         </button>
       </Link>
@@ -26,5 +24,5 @@ function Navbar(props){
   )
 }
 
-export default Navbar
+export default withBarking(Navbar)
 

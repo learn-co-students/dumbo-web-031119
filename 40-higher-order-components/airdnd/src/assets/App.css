@@ -8,10 +8,14 @@
   color: rgb(207,216,212);
   text-shadow: -1px 1px black;
 }
+.button {
+  width: 100%;
+  height: 100%;
+}
 
 .home-cards {
   display: grid;
-  grid-template-columns: 3fr repeat(7,1fr);
+  grid-template-columns: repeat(5,1fr);
   margin: 0.5vw;
 }
 

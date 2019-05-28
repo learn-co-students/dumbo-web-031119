@@ -12,9 +12,13 @@ import NewCity from '../city/NewCity'
 
 import { Route, Switch, Redirect } from 'react-router-dom'
 
+import withBarking from '../HOC/withBarking'
+
+const BarkingCities = withBarking(Cities)
+const BarkingNewCity = withBarking(NewCity)
+
 class App extends Component {
   state = {
-    // page: "cities",
     cities: [],
     loading: true
   }
@@ -27,12 +31,6 @@ class App extends Component {
     })
   }
 
-  // changePage = (newPage) => {
-  //   if (this.state.page !== newPage){
-  //     this.setState({page: newPage})
-  //   }
-  // }
-
   updateCities = (cityObj) => {
     this.setState((prevState) => {
       return {
@@ -41,22 +39,7 @@ class App extends Component {
       }
     })
   }
-
-  // renderPage(){
-  //   switch(this.state.page){
-  //     case "home":
-  //       return <Home/>
-  //     case "cities":
-  //       return <Cities cities={this.state.cities}/>
-  //     case "form":
-  //       return <NewCity updateCities={this.updateCities} />
-  //     default:
-  //       return <Loader />
-  //   }
-  // }
-
   render(){
-    // console.log("APP PROPS", this.props)
     return (
       <div className="app">
         <Navbar />
@@ -64,13 +47,9 @@ class App extends Component {
           <Route 
             path="/cities/:id"
             render={(routerProps) => {
-              console.log("CITYCONTAINER",routerProps)
-              // return <h1>This is city: {routerProps.match.params.id}</h1>
-
               const foundCity = this.state.cities.find(city => city.id === parseInt(routerProps.match.params.id))
-
               if (foundCity){
-                return <CityContainer name={foundCity.name} homes={foundCity.homes} />
+                return <CityContainer {...foundCity} {...routerProps} />
               } else {
                 return <Loader />
               }
@@ -79,10 +58,10 @@ class App extends Component {
             />
           <Route 
             path="/cities" 
-            render={(routerProps) => <Cities cities={this.state.cities} {...routerProps} />} /> 
+            render={(routerProps) => <BarkingCities cities={this.state.cities} {...routerProps} />} /> 
           <Route 
             path="/new-city" 
-            render={(routerProps) => <NewCity updateCities={this.updateCities} {...routerProps} />} />
+            render={(routerProps) => <BarkingNewCity updateCities={this.updateCities} {...routerProps} />} />
           <Route exact path="/" component={Home} />
           <Route render={() => <Redirect to="/" />}/>
         </Switch>

@@ -2,30 +2,33 @@
 
 
 ## SWBATs
-- [ ] Describe the relationship between higher-order functions and higher-order components
-- [ ] Explain composition as an alternative to inheritance
-- [ ] Create and use a higher-order component to abstract behavior
-- [ ] Give common examples of higher-order components
+- [x] Describe the relationship between higher-order functions and higher-order components
+- [x] Explain composition as an alternative to inheritance
+- [x] Create and use a higher-order component to abstract behavior
+- [x] Give common examples of higher-order components
 
 
 ## Notes
 
 ### Higher-order Functions
-Functions are first-class citizens
-- Functions are treated like any other data type and can be passed around just like anything else
+Function that takes another function (callback) as an argument
+- map
+- event handlers (addEventListener in JS, Synthentic Event handlers in React)
+- setState
+- filter
+- forEach
 
-What is it??
-- Function that takes another function as an argument
-  - `setState`
-  - `setInterval`
-  - `addEventListener`
-  - `map`
-  - `forEach`
-  - `filter`
-  - `then`
-- Function that can return a function
-  - `bind`
-- Or both!
+```js
+[1,2,3,4].map(element => {
+  return element * 2
+})
+````
+
+Function that returns another function
+- bind
+
+- 
+Or both!
 
 
 ### Higher-order Components
@@ -69,3 +72,8 @@ export default withColorChange
 - Add the same props to multiple components (withRouter)
 - Add the same conditional rendering to multiple components (withLoading)
 - Add the same functionality to multipleComponents using state/component lifecycle methods (withAds)
+
+
+```html
+<iframe title="advertisement" height="250px" width="425px" src="https://www.youtube.com/embed/a8XC4H84rMU?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+```

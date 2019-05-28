@@ -7,12 +7,6 @@
 
 ## Notes
 
-
-
-
-
-
-
 ### The Virtual DOM
 
 ```html
