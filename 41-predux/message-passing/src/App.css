@@ -1,0 +1,41 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 5px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+  justify-content: space-around;
+  border-bottom-style: solid;
+  border-bottom-radius: 2px;
+  padding: 10px;
+}
+
+.controls > div > * {
+  height: 100%;
+}
+
+
+.card {
+  margin: 5px;
+  border-style: solid;
+  border-radius: 2px;
+  text-align: center;
+  padding: 10px;
+}
+
+.dark {
+  color: white;
+  background-color: black;
+}
+
+.image-wrapper {
+}
