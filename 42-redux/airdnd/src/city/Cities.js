@@ -1,5 +1,6 @@
 import React from 'react'
 import CityCard from './CityCard'
+import { connect } from 'react-redux' 
 
 class Cities extends React.Component {
   changeCity = (cityID) => {
@@ -8,7 +9,7 @@ class Cities extends React.Component {
 
   
   renderCityCards() {
-    return this.props.cities.map(city => <CityCard changeCity={this.changeCity} key={city.id} {...city} />)
+    return this.props.reduxCities.map(city => <CityCard changeCity={this.changeCity} key={city.id} {...city} />)
   }
 
   render(){
@@ -20,4 +21,10 @@ class Cities extends React.Component {
   }
 }
 
-export default Cities
+function mapStateToProps(state){
+  // has access to all of the REDUX state
+  // BUT this component (App) only needs the cities
+  return {reduxCities: state.cities}
+}
+
+export default connect(mapStateToProps)(Cities)

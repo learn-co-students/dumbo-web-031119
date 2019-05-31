@@ -11,9 +11,11 @@ import CityContainer from '../city/CityContainer'
 import NewCity from '../city/NewCity'
 
 import { Route, Switch, Redirect } from 'react-router-dom'
+
+import { connect } from 'react-redux'
+
 class App extends Component {
   state = {
-    cities: [],
     loading: true
   }
 
@@ -21,7 +23,8 @@ class App extends Component {
     fetch("http://localhost:3001/api/v1/cities")
     .then(res => res.json())
     .then(response => {
-      this.setState({loading: false, cities: response})
+      this.props.addCities(response)
+      this.setState({loading: false})
     })
   }
 
@@ -34,6 +37,7 @@ class App extends Component {
     })
   }
   render(){
+    console.log("APP props", this.props)
     return (
       <div className="app">
         <Navbar />
@@ -41,7 +45,7 @@ class App extends Component {
           <Route 
             path="/cities/:id"
             render={(routerProps) => {
-              const foundCity = this.state.cities.find(city => city.id === parseInt(routerProps.match.params.id))
+              const foundCity = this.props.reduxCities.find(city => city.id === parseInt(routerProps.match.params.id))
               if (foundCity){
                 return <CityContainer {...foundCity} {...routerProps} />
               } else {
@@ -52,7 +56,7 @@ class App extends Component {
             />
           <Route 
             path="/cities" 
-            render={(routerProps) => <Cities cities={this.state.cities} {...routerProps} />} /> 
+            render={(routerProps) => <Cities {...routerProps} />} /> 
           <Route 
             path="/new-city" 
             render={(routerProps) => <NewCity updateCities={this.updateCities} {...routerProps} />} />
@@ -62,6 +66,28 @@ class App extends Component {
       </div>
     );
   }
+} // end of class
+
+// we will take some values from state and ADD it to the component's props
+function mapStateToProps(state){
+  // has access to all of the REDUX state
+  // BUT this component (App) only needs the cities
+  return {reduxCities: state.cities}
 }
 
-export default App
+// this will be used to write to state
+function mapDispatchToProps(dispatch){
+  console.log(dispatch)
+  return {
+    addCities: (cities) => {
+      // console.log("addCities called!!!", cities)
+
+      dispatch({type: "ADD_CITIES", payload: cities})
+  }}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+
+
+
